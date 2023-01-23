@@ -1,20 +1,14 @@
 <template>
-    <div id="faceitLogin"></div>
+    <button class="button Faceit" v-on:click="loginWithFaceit">Connect with FACEIT</button>
 </template>
 
 <script>
 export default {
     name: 'ConnectFaceit',
-    mounted() {
-        if (!process.server && !window.FACEIT) {
-            var initParams = {
-                client_id: '98989178-f5ff-4375-be77-1d6c8ac9f81d',
-                response_type: '200',
-                state: 'informationYouWantPassedToTheRedirectUri',
-                redirect_popup: true,
-                debug: true
-            };
-            window.FACEIT.init(initParams);     
+    methods: {
+        loginWithFaceit() {
+            var encodedPath = encodeURIComponent(this.$route.path)
+            window.location.href = `https://accounts.faceit.com/?response_type=code&client_id=76d40002-e72d-4c5c-b6e8-c56afd7e601c&redirect_popup=true&state=${encodedPath}`
         }
     }
 }

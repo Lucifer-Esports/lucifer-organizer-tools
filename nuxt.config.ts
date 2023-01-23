@@ -3,11 +3,6 @@ export default defineNuxtConfig({
     app: {
         head: {
             script: [
-                { 
-                    src: "https://cdn.faceit.com/oauth/faceit-oauth-sdk-1.3.0.min.js",  
-                    type: "text/javascript",
-                    crossorigin: "anonymous",
-                },
                 {
                     src: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
                     type: "text/javascript",
